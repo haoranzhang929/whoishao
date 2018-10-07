@@ -1,6 +1,14 @@
+$mdc-theme-primary: #2962ff;
+$mdc-theme-on-primary: #ffffff;
+
 @import "@material/top-app-bar/mdc-top-app-bar";
 @import "@material/drawer/mdc-drawer";
 @import "@material/list/mdc-list";
+@import "@material/card/mdc-card";
+@import "@material/image-list/mdc-image-list";
+@import "@material/typography/mdc-typography";
+@import "@material/menu-surface/mdc-menu-surface";
+@import "@material/menu/mdc-menu";
 
 body {
   display: flex;
@@ -12,6 +20,15 @@ body {
   overflow: auto;
 }
 
+.mdc-list-item__sub {
+  padding-left: 30px !important;
+}
+
+.mdc-menu {
+  left: -65px !important;
+  margin-top: 60px !important;
+}
+
 .main-content {
   overflow: auto;
   height: 100%;
@@ -19,4 +36,13 @@ body {
 
 .app-bar {
   position: absolute;
+}
+
+.my-card {
+  height: 350px;
+  width: 350px;
+}
+
+.logo-img {
+  width: 60px;
 }
