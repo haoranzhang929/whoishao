@@ -1,10 +1,11 @@
 const autoprefixer = require("autoprefixer");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = [
   {
     entry: {
-      index: ["./app.scss", "./app.js"]
+      index: ["./style/app.scss", "./scripts/style.js", "./scripts/main.js"]
     },
     output: {
       path: __dirname + "/build",
@@ -48,6 +49,7 @@ module.exports = [
       ]
     },
     plugins: [
+      new CopyWebpackPlugin([{ from: "assets", to: "./assets" }]),
       new HtmlWebpackPlugin({
         filename: "index.html",
         template: "pages/index.html",
