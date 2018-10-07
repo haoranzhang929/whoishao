@@ -17,5 +17,5 @@ topAppBar.listen("MDCTopAppBar:nav", () => {
   menuDrawer.open = !menuDrawer.open;
 });
 menuBtn.addEventListener("click", () => {
-  menu.open = true;
+  !menu.open ? (menu.open = true) : (menu.open = false);
 });
