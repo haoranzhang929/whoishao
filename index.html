@@ -11,13 +11,21 @@
   <link rel="stylesheet" href="bundle.css">
 </head>
 
-<body>
+<body class="mdc-typography">
   <div class="mdc-drawer-app-content">
-    <header class="mdc-top-app-bar app-bar" id="app-bar">
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed app-bar" id="app-bar">
       <div class="mdc-top-app-bar__row">
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
           <a href="#" class="demo-menu material-icons mdc-top-app-bar__navigation-icon">menu</a>
-          <span class="mdc-top-app-bar__title">Who is Hao?</span>
+          <span class="mdc-top-app-bar__title">
+            Hao
+          </span>
+        </section>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+          <a href="/" class="material-icons mdc-top-app-bar__action-item" aria-label="Download" alt="home">home</a>
+          <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Projects page" alt="Projects page">collections</a>
+          <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Contact page" alt="Contact page">contact_mail</a>
+          <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="About page" alt="About page">info</a>
         </section>
       </div>
     </header>
@@ -29,17 +37,21 @@
       </div>
       <div class="mdc-drawer__content">
         <div class="mdc-list">
-          <a class="mdc-list-item mdc-list-item--activated" href="#" aria-selected="true">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">inbox</i>
+          <a class="mdc-list-item mdc-list-item--activated" href="/" aria-selected="true">
+            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
             <span class="mdc-list-item__text">Home</span>
           </a>
           <a class="mdc-list-item" href="#">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">send</i>
-            <span class="mdc-list-item__text">Outgoing</span>
+            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">collections</i>
+            <span class="mdc-list-item__text">Projects</span>
           </a>
           <a class="mdc-list-item" href="#">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
-            <span class="mdc-list-item__text">Drafts</span>
+            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">contact_mail</i>
+            <span class="mdc-list-item__text">Contact</span>
+          </a>
+          <a class="mdc-list-item" href="#">
+            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">info</i>
+            <span class="mdc-list-item__text">About</span>
           </a>
         </div>
       </div>
@@ -49,7 +61,8 @@
 
     <main class="main-content" id="main-content">
       <div class="mdc-top-app-bar--fixed-adjust">
-        App Content
+
+
       </div>
     </main>
   </div>
