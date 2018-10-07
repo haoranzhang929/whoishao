@@ -4,7 +4,7 @@
   "description": "website of Hao",
   "main": "index.js",
   "scripts": {
-    "deploy": "gp-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "author": "Hao",
   "license": "ISC",
