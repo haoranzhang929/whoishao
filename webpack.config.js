@@ -5,7 +5,8 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = [
   {
     entry: {
-      index: ["./style/app.scss", "./scripts/style.js", "./scripts/main.js"]
+      main: ["./style/app.scss", "./scripts/style.js", "./scripts/main.js"],
+      particles: ["./scripts/particles.js"]
     },
     output: {
       path: __dirname + "/build",
@@ -53,7 +54,7 @@ module.exports = [
       new HtmlWebpackPlugin({
         filename: "index.html",
         template: "pages/index.html",
-        chunks: ["index"],
+        chunks: ["main", "particles"],
         inject: false
       })
     ]
