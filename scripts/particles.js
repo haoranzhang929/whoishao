@@ -13,7 +13,7 @@ particlesJS("particles-js", {
       value: "#2962ff"
     },
     shape: {
-      type: "circle",
+      type: "triangle",
       stroke: {
         width: 0,
         color: "#000000"
@@ -70,14 +70,14 @@ particlesJS("particles-js", {
     }
   },
   interactivity: {
-    detect_on: "canvas",
+    detect_on: "window",
     events: {
       onhover: {
         enable: true,
         mode: "bubble"
       },
       onclick: {
-        enable: true,
+        enable: false,
         mode: "repulse"
       },
       resize: true
@@ -91,7 +91,7 @@ particlesJS("particles-js", {
       },
       bubble: {
         distance: 250,
-        size: 0,
+        size: 10,
         duration: 2,
         opacity: 0,
         speed: 3
