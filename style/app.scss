@@ -67,7 +67,8 @@ body {
       flex-direction: column;
       justify-content: center;
       flex-grow: 1;
-      .intro {
+      .intro,
+      .visual {
         align-self: center;
       }
     }
