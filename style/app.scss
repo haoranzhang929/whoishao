@@ -107,6 +107,8 @@ footer {
 // Media Query
 @media (max-width: 769px) {
   .main-content {
+    display: flex;
+    flex-direction: column;
     section {
       flex-direction: column;
       padding-top: 56px;
@@ -119,7 +121,8 @@ footer {
     }
   }
   footer {
-    bottom: 0;
+    position: static;
+    margin-bottom: 10px;
   }
 }
 
