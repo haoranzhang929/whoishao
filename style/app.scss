@@ -82,6 +82,22 @@ footer {
   text-align: center;
 }
 
+// Media Query
+@media (max-width: 769px) {
+  .main-content {
+    section {
+      flex-direction: column;
+      padding-top: 56px;
+      .section-1,
+      .section-2 {
+        text-align: center;
+        align-items: center;
+        flex-direction: row;
+      }
+    }
+  }
+}
+
 // Animation
 
 .shake:hover {
