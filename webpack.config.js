@@ -56,6 +56,24 @@ module.exports = [
         template: "pages/index.html",
         chunks: ["main", "particles"],
         inject: false
+      }),
+      new HtmlWebpackPlugin({
+        filename: "contact.html",
+        template: "pages/contact.html",
+        chunks: ["main", "particles"],
+        inject: false
+      }),
+      new HtmlWebpackPlugin({
+        filename: "about.html",
+        template: "pages/about.html",
+        chunks: ["main", "particles"],
+        inject: false
+      }),
+      new HtmlWebpackPlugin({
+        filename: "projects.html",
+        template: "pages/projects.html",
+        chunks: ["main", "particles"],
+        inject: false
       })
     ]
   }
