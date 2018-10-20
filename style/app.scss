@@ -1,6 +1,8 @@
 $mdc-theme-primary: #2962ff;
 $mdc-theme-on-primary: #ffffff;
 
+@import "./libs/normalize.css";
+@import "./libs/materialicons.css";
 @import "@material/top-app-bar/mdc-top-app-bar";
 @import "@material/drawer/mdc-drawer";
 @import "@material/list/mdc-list";
