@@ -119,7 +119,7 @@ if (container) {
   };
 
   let text = loadText("assets/RobotoBlackRegular.json");
-  text.position.x = -2.5;
+  text.position.x = -2.85;
   text.position.y = -1;
 
   let pivot = new THREE.Object3D();
