@@ -104,11 +104,10 @@ if (container) {
   let loadText = objPath => {
     let container = new THREE.Object3D();
     textLoader.load(objPath, font => {
-      var geometry = new THREE.TextGeometry("HAO", {
+      var geometry = new THREE.TextGeometry("白告", {
         font: font,
         size: 2,
-        height: 0.5,
-        curveSegments: 16
+        height: 0.5
       });
       geometry.computeBoundingBox();
       var material = new THREE.MeshNormalMaterial();
@@ -118,8 +117,8 @@ if (container) {
     return container;
   };
 
-  let text = loadText("assets/RobotoBlackRegular.json");
-  text.position.x = -2.85;
+  let text = loadText("assets/DFPKingGothicGB-Thin-2.json");
+  text.position.x = -2.5;
   text.position.y = -1;
 
   let pivot = new THREE.Object3D();
@@ -190,7 +189,7 @@ if (container) {
   const render = () => {
     requestAnimationFrame(render);
 
-    pivot.rotation.y -= 0.03;
+    pivot.rotation.y -= 0.04;
     pivot.rotation.y += (targetRotation - pivot.rotation.y) * 0.05;
 
     renderer.render(scene, camera);
