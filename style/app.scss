@@ -90,7 +90,7 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      flex-grow: 1;
+      width: 50vw;
       .intro,
       .visual {
         align-self: center;
@@ -119,6 +119,8 @@ footer {
         text-align: center;
         align-items: center;
         flex-direction: row;
+        width: 100vw;
+        height: 50vh;
       }
     }
   }
