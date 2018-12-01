@@ -118,7 +118,7 @@ if (container) {
   };
 
   let text = loadText("assets/DFPKingGothicGB-Thin-2.json");
-  text.position.x = -2.5;
+  text.position.x = -2.8;
   text.position.y = -1;
 
   let pivot = new THREE.Object3D();
