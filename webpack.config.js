@@ -6,7 +6,8 @@ module.exports = [
   {
     entry: {
       main: ["./style/app.scss", "./scripts/style.js", "./scripts/main.js"],
-      particles: ["./scripts/particles.js"]
+      particles: ["./scripts/particles.js"],
+      projects: ["./scripts/projects.js"]
     },
     output: {
       path: __dirname + "/build",
@@ -72,7 +73,7 @@ module.exports = [
       new HtmlWebpackPlugin({
         filename: "projects.html",
         template: "pages/projects.html",
-        chunks: ["main", "particles"],
+        chunks: ["main", "particles", "projects"],
         inject: false
       })
     ]
