@@ -1,124 +1,348 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hao | Projects</title>
+    <link rel="icon" href="assets/favicon.png" />
+    <link rel="stylesheet" href="bundle.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hao | Projects</title>
-  <link rel="icon" href="assets/favicon.png">
-  <link rel="stylesheet" href="bundle.css">
-</head>
+  <body class="mdc-typography">
+    <div class="mdc-drawer-app-content">
+      <header
+        class="mdc-top-app-bar mdc-top-app-bar--fixed app-bar"
+        id="app-bar"
+      >
+        <div class="mdc-top-app-bar__row">
+          <section
+            class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"
+          >
+            <a
+              href="#"
+              role="button"
+              class="material-icons mdc-top-app-bar__navigation-icon shake"
+              >menu</a
+            >
+            <img
+              src="assets/logo.svg"
+              alt="logo"
+              class="mdc-top-app-bar__title logo"
+            />
+          </section>
+          <section
+            class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end mdc-menu-surface--anchor"
+            role="toolbar"
+          >
+            <a
+              href="/"
+              class="material-icons mdc-top-app-bar__action-item"
+              aria-label="Home Page"
+              alt="home"
+              >home</a
+            >
+            <a
+              href="/projects.html"
+              class="material-icons mdc-top-app-bar__action-item"
+              aria-label="Projects button"
+              alt="Projects button"
+              >collections</a
+            >
+            <a
+              href="/contact.html"
+              class="material-icons mdc-top-app-bar__action-item"
+              aria-label="Contact page"
+              alt="Contact page"
+              >contact_mail</a
+            >
+            <a
+              href="/about.html"
+              class="material-icons mdc-top-app-bar__action-item"
+              aria-label="About page"
+              alt="About page"
+              >info</a
+            >
+          </section>
+        </div>
+      </header>
 
-<body class="mdc-typography">
-  <div class="mdc-drawer-app-content">
-    <header class="mdc-top-app-bar mdc-top-app-bar--fixed app-bar" id="app-bar">
-      <div class="mdc-top-app-bar__row">
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-          <a href="#" role="button" class="material-icons mdc-top-app-bar__navigation-icon shake">menu</a>
-          <img src="assets/logo.svg" alt="logo" class="mdc-top-app-bar__title logo">
-        </section>
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end mdc-menu-surface--anchor" role="toolbar">
-          <a href="/" class="material-icons mdc-top-app-bar__action-item" aria-label="Home Page" alt="home">home</a>
-          <div class="mdc-top-app-bar__action-item menu-button" aria-label="Projects button" alt="Projects button" role="button">
-            <i class="material-icons" aria-hidden="true">collections</i>
-            <div class="mdc-menu mdc-menu-surface" tabindex="-1">
-              <div class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                <a class="mdc-list-item" role="menuitem" href="projects.html">
-                  <i class="material-icons mdc-list-item__graphic" aria-hidden="true">web</i>
-                  <span class="mdc-list-item__text">Web Projects</span>
-                </a>
-                <a class="mdc-list-item" role="menuitem" href="projects.html">
-                  <i class="material-icons mdc-list-item__graphic" aria-hidden="true">library_music</i>
-                  <span class="mdc-list-item__text">Audio</span>
-                </a>
-                <a class="mdc-list-item" role="menuitem" href="projects.html">
-                  <i class="material-icons mdc-list-item__graphic" aria-hidden="true">video_library</i>
-                  <span class="mdc-list-item__text">Video</span>
-                </a>
+      <aside class="mdc-drawer mdc-drawer--modal">
+        <div class="mdc-drawer__header">
+          <img
+            class="portrait"
+            src="assets/portrait.jpg"
+            alt="Portrait of Hao"
+          />
+          <p class="mdc-drawer__title">Haoran Zhang</p>
+          <a class="mdc-drawer__subtitle" href="mailto:haoranzhang@icloud.com"
+            >haoranzhang@icloud.com</a
+          >
+        </div>
+        <div class="mdc-drawer__content">
+          <div class="mdc-list">
+            <a class="mdc-list-item" href="/" aria-selected="true">
+              <i
+                class="material-icons mdc-list-item__graphic"
+                aria-hidden="true"
+                >home</i
+              >
+              <span class="mdc-list-item__text">Home</span>
+            </a>
+
+            <a
+              class="mdc-list-item mdc-list-item--activated"
+              href="/projects.html"
+            >
+              <i
+                class="material-icons mdc-list-item__graphic"
+                aria-hidden="true"
+                >collections</i
+              >
+              <span class="mdc-list-item__text">Projects</span>
+            </a>
+
+            <a class="mdc-list-item" href="/contact.html">
+              <i
+                class="material-icons mdc-list-item__graphic"
+                aria-hidden="true"
+                >contact_mail</i
+              >
+              <span class="mdc-list-item__text">Contact</span>
+            </a>
+            <a class="mdc-list-item" href="/about.html">
+              <i
+                class="material-icons mdc-list-item__graphic"
+                aria-hidden="true"
+                >info</i
+              >
+              <span class="mdc-list-item__text">About</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <div class="mdc-drawer-scrim"></div>
+
+      <main class="main-content" id="main-content">
+        <section class="flex projects">
+          <div class="section-1">
+            <div class="btns">
+              <button class="mdc-button mdc-button--outlined" id="all">
+                <span class="mdc-button__label">All projects</span>
+              </button>
+              <button class="mdc-button mdc-button--outlined" id="apps">
+                <span class="mdc-button__label">Web Apps</span>
+              </button>
+              <button class="mdc-button mdc-button--outlined" id="sites">
+                <span class="mdc-button__label">Websites</span>
+              </button>
+              <button class="mdc-button mdc-button--outlined" id="other">
+                <span class="mdc-button__label">Other</span>
+              </button>
+            </div>
+          </div>
+          <div class="section-2">
+            <div class="lists">
+              <div class="project project-app">
+                <div class="mdc-card">
+                  <div class="mdc-card__primary-action">
+                    <div
+                      class="mdc-card__media mdc-card__media--16-9 image-finder"
+                    ></div>
+                  </div>
+                  <div class="mdc-card__actions">
+                    <div class="title">
+                      <h3 class="mdc-typography mdc-typography--headline6">
+                        Image Finder
+                      </h3>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <a
+                        class="mdc-button mdc-card__action mdc-card__action--button"
+                        href="https://github.com/haoranzhang929/unsplash-image-finder"
+                        target="_blank"
+                      >
+                        <span class="mdc-button__label">Code</span>
+                      </a>
+                      <a
+                        class="mdc-button mdc-card__action mdc-card__action--button"
+                        href="http://hao-search.tk"
+                        target="_blank"
+                      >
+                        <span class="mdc-button__label">Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project project-app">
+                <div class="mdc-card">
+                  <div class="mdc-card__primary-action">
+                    <div
+                      class="mdc-card__media mdc-card__media--16-9 audio-freq"
+                    ></div>
+                  </div>
+                  <div class="mdc-card__actions">
+                    <div class="title">
+                      <h3 class="mdc-typography mdc-typography--headline6">
+                        Audio Visual Tool
+                      </h3>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <a
+                        class="mdc-button mdc-card__action mdc-card__action--button"
+                        href="https://github.com/haoranzhang929/audio-frequency-visual-generators"
+                        target="_blank"
+                      >
+                        <span class="mdc-button__label">Code</span>
+                      </a>
+                      <a
+                        class="mdc-button mdc-card__action mdc-card__action--button"
+                        href="http://ec2-52-213-180-139.eu-west-1.compute.amazonaws.com"
+                        target="_blank"
+                      >
+                        <span class="mdc-button__label">Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project project-site">
+                <div class="mdc-card">
+                  <div class="mdc-card__primary-action">
+                    <div
+                      class="mdc-card__media mdc-card__media--16-9 one-kicks"
+                    ></div>
+                  </div>
+                  <div class="mdc-card__actions">
+                    <div class="title">
+                      <h3 class="mdc-typography mdc-typography--headline6">
+                        ONE KICKS <br />
+                        (Online Store)
+                      </h3>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <button
+                        class="mdc-button mdc-card__action mdc-card__action--button hide"
+                        disabled
+                      >
+                        <span class="mdc-button__label">Code</span>
+                      </button>
+                      <a
+                        class="mdc-button mdc-card__action mdc-card__action--button"
+                        href="https://1-kicks.com"
+                        target="_blank"
+                      >
+                        <span class="mdc-button__label">URL</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project project-site">
+                <div class="mdc-card">
+                  <div class="mdc-card__primary-action">
+                    <div class="mdc-card__media mdc-card__media--16-9 cp"></div>
+                  </div>
+                  <div class="mdc-card__actions">
+                    <div class="title">
+                      <h3 class="mdc-typography mdc-typography--headline6">
+                        Changing Places Ireland
+                      </h3>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <button
+                        class="mdc-button mdc-card__action mdc-card__action--button hide"
+                        disabled
+                      >
+                        <span class="mdc-button__label">Code</span>
+                      </button>
+                      <a
+                        class="mdc-button mdc-card__action mdc-card__action--button"
+                        href="https://changingplaces.ie"
+                        target="_blank"
+                      >
+                        <span class="mdc-button__label">URL</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project project-other">
+                <div class="mdc-card">
+                  <div class="mdc-card__primary-action">
+                    <div class="mdc-card__media mdc-card__media--16-9 bc"></div>
+                  </div>
+                  <div class="mdc-card__actions">
+                    <div class="title">
+                      <h3 class="mdc-typography mdc-typography--headline6">
+                        My Bandcamp
+                      </h3>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <button
+                        class="mdc-button mdc-card__action mdc-card__action--button hide"
+                        disabled
+                      >
+                        <span class="mdc-button__label">Code</span>
+                      </button>
+                      <a
+                        class="mdc-button mdc-card__action mdc-card__action--button"
+                        href="https://ha0beatz.bandcamp.com"
+                        target="_blank"
+                      >
+                        <span class="mdc-button__label">URL</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project project-other">
+                <div class="mdc-card">
+                  <div class="mdc-card__primary-action">
+                    <div
+                      class="mdc-card__media mdc-card__media--16-9 youtube"
+                    ></div>
+                  </div>
+                  <div class="mdc-card__actions">
+                    <div class="title">
+                      <h3 class="mdc-typography mdc-typography--headline6">
+                        My Youtube Channel
+                      </h3>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <button
+                        class="mdc-button mdc-card__action mdc-card__action--button hide"
+                        disabled
+                      >
+                        <span class="mdc-button__label">Code</span>
+                      </button>
+                      <a
+                        class="mdc-button mdc-card__action mdc-card__action--button"
+                        href="https://www.youtube.com/channel/UCPIeJ9dP80qSbyOd2SGh4Jg/featured"
+                        target="_blank"
+                      >
+                        <span class="mdc-button__label">URL</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <a href="/contact.html" class="material-icons mdc-top-app-bar__action-item" aria-label="Contact page" alt="Contact page">contact_mail</a>
-          <a href="/about.html" class="material-icons mdc-top-app-bar__action-item" aria-label="About page" alt="About page">info</a>
         </section>
-      </div>
-    </header>
+      </main>
+    </div>
+    <div id="particles-js"></div>
 
-    <aside class="mdc-drawer mdc-drawer--modal">
-      <div class="mdc-drawer__header">
-        <img class="portrait" src="assets/portrait.jpg" alt="Portrait of Hao">
-        <p class="mdc-drawer__title">Haoran Zhang</p>
-        <a class="mdc-drawer__subtitle" href="mailto:haoranzhang@icloud.com">haoranzhang@icloud.com</a>
-      </div>
-      <div class="mdc-drawer__content">
-        <div class="mdc-list">
-          <a class="mdc-list-item" href="/" aria-selected="true">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
-            <span class="mdc-list-item__text">Home</span>
-          </a>
-          <hr class="mdc-list-divider">
-
-          <a class="mdc-list-item mdc-list-item--activated" href="/projects.html">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">collections</i>
-            <span class="mdc-list-item__text">Projects</span>
-          </a>
-
-          <a class="mdc-list-item mdc-list-item__sub" href="/projects.html">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">web</i>
-            <span class="mdc-list-item__text">Web Projects</span>
-          </a>
-          <a class="mdc-list-item mdc-list-item__sub" href="/projects.html">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">library_music</i>
-            <span class="mdc-list-item__text">Audio</span>
-          </a>
-          <a class="mdc-list-item mdc-list-item__sub" href="/projects.html">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">video_library</i>
-            <span class="mdc-list-item__text">Video</span>
-          </a>
-
-          <hr class="mdc-list-divider">
-          <a class="mdc-list-item" href="/contact.html">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">contact_mail</i>
-            <span class="mdc-list-item__text">Contact</span>
-          </a>
-          <a class="mdc-list-item" href="/about.html">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">info</i>
-            <span class="mdc-list-item__text">About</span>
-          </a>
-        </div>
-      </div>
-    </aside>
-
-    <div class="mdc-drawer-scrim"></div>
-
-    <main class="main-content" id="main-content">
-      <section class="flex">
-        <div class="section-1">
-          <div class="intro">
-            <p class="mdc-typography--headline4">This is projects page</p>
-            <p class="mdc-typography--headline4">Web project</p>
-            <p class="mdc-typography--headline4">Audio Project</p>
-            <p class="mdc-typography--headline4">Video projects</p>
-          </div>
-        </div>
-        <div class="section-2">
-          <div class="visual">
-            <p class="mdc-typography--headline2">Beautiful Visual</p>
-          </div>
-        </div>
-      </section>
-      <footer>
-        <span>
-          © 2018 Haoran Zhang
-        </span>
-      </footer>
-    </main>
-  </div>
-  <div id="particles-js"></div>
-
-  <script src="main.bundle.js" async></script>
-  <script src="particles.bundle.js" async></script>
-</body>
-
+    <script src="main.bundle.js" async></script>
+    <script src="particles.bundle.js" async></script>
+    <script src="projects.bundle.js" async></script>
+  </body>
 </html>
