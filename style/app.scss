@@ -11,6 +11,7 @@ $mdc-theme-on-primary: #ffffff;
 @import "@material/typography/mdc-typography";
 @import "@material/menu-surface/mdc-menu-surface";
 @import "@material/menu/mdc-menu";
+@import "@material/button/mdc-button";
 
 body {
   display: flex;
@@ -104,6 +105,21 @@ footer {
   bottom: 10px;
   width: 100%;
   text-align: center;
+}
+
+// Projects Page
+.main-content {
+  section.projects {
+    .section-1,
+    .section-2 {
+      .btns {
+        height: 50%;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
 }
 
 // Media Query
