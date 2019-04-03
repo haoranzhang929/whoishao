@@ -22,6 +22,10 @@ body {
   display: flex;
 }
 
+.hide {
+  visibility: hidden;
+}
+
 #particles-js {
   position: absolute;
   width: 100%;
@@ -110,14 +114,69 @@ footer {
 // Projects Page
 .main-content {
   section.projects {
+    flex-direction: row;
     .section-1,
     .section-2 {
       .btns {
-        height: 50%;
+        position: absolute;
+        height: 60vh;
         align-self: center;
         display: flex;
+        justify-content: center;
         flex-direction: column;
+        button {
+          margin: 20px 0px;
+        }
       }
+      .lists {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 20px;
+        align-self: center;
+        height: 50%;
+        width: 100%;
+        .project {
+          justify-self: center;
+          align-self: center;
+          width: 80%;
+          .mdc-card {
+            width: 100%;
+            height: 100%;
+            .mdc-card__actions {
+              justify-content: space-around;
+              h3 {
+                text-align: center;
+              }
+            }
+          }
+        }
+        .image-finder {
+          background-image: url("/assets/Image-search.png");
+        }
+        .audio-freq {
+          background-image: url("/assets/audio-freq.png");
+        }
+        .one-kicks {
+          background-image: url("/assets/shoes.jpg");
+        }
+        .cp {
+          background-image: url("/assets/cp.png");
+        }
+        .bc {
+          background-image: url("/assets/bc.jpg");
+        }
+        .youtube {
+          background-image: url("/assets/youtube.jpg");
+        }
+      }
+    }
+    .section-1 {
+      width: 20vw;
+    }
+    .section-2 {
+      width: 80vw;
+      justify-content: flex-start;
+      margin-top: 70px;
     }
   }
 }
@@ -129,7 +188,6 @@ footer {
     flex-direction: column;
     section {
       flex-direction: column;
-      padding-top: 56px;
       .section-1,
       .section-2 {
         text-align: center;
@@ -140,9 +198,40 @@ footer {
       }
     }
   }
+
+  // Projects Page
+  .main-content {
+    section.projects {
+      .section-1,
+      .section-2 {
+        width: 100vw;
+        .btns {
+          height: 60vh;
+          align-self: center;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          button {
+            margin: 5px 0px;
+          }
+        }
+        .lists {
+          grid-template-columns: 1fr;
+          height: 100%;
+        }
+      }
+      .section-1 {
+        display: none;
+      }
+      .section-2 {
+        height: 100vh;
+      }
+    }
+  }
+
   footer {
-    position: static;
-    margin-bottom: 10px;
+    position: absolute;
+    margin-bottom: 0px;
   }
 }
 

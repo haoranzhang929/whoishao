@@ -1,122 +1,152 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hao | About</title>
+    <link rel="icon" href="assets/favicon.png" />
+    <link rel="stylesheet" href="bundle.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hao | About</title>
-  <link rel="icon" href="assets/favicon.png">
-  <link rel="stylesheet" href="bundle.css">
-</head>
+  <body class="mdc-typography">
+    <div class="mdc-drawer-app-content">
+      <header
+        class="mdc-top-app-bar mdc-top-app-bar--fixed app-bar"
+        id="app-bar"
+      >
+        <div class="mdc-top-app-bar__row">
+          <section
+            class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"
+          >
+            <a
+              href="#"
+              role="button"
+              class="material-icons mdc-top-app-bar__navigation-icon shake"
+              >menu</a
+            >
+            <img
+              src="assets/logo.svg"
+              alt="logo"
+              class="mdc-top-app-bar__title logo"
+            />
+          </section>
+          <section
+            class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end mdc-menu-surface--anchor"
+            role="toolbar"
+          >
+            <a
+              href="/"
+              class="material-icons mdc-top-app-bar__action-item"
+              aria-label="Home Page"
+              alt="home"
+              >home</a
+            >
+            <a
+              href="/projects.html"
+              class="material-icons mdc-top-app-bar__action-item"
+              aria-label="Projects button"
+              alt="Projects button"
+              >collections</a
+            >
+            <a
+              href="/contact.html"
+              class="material-icons mdc-top-app-bar__action-item"
+              aria-label="Contact page"
+              alt="Contact page"
+              >contact_mail</a
+            >
+            <a
+              href="/about.html"
+              class="material-icons mdc-top-app-bar__action-item"
+              aria-label="About page"
+              alt="About page"
+              >info</a
+            >
+          </section>
+        </div>
+      </header>
 
-<body class="mdc-typography">
-  <div class="mdc-drawer-app-content">
-    <header class="mdc-top-app-bar mdc-top-app-bar--fixed app-bar" id="app-bar">
-      <div class="mdc-top-app-bar__row">
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-          <a href="#" role="button" class="material-icons mdc-top-app-bar__navigation-icon shake">menu</a>
-          <img src="assets/logo.svg" alt="logo" class="mdc-top-app-bar__title logo">
-        </section>
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end mdc-menu-surface--anchor" role="toolbar">
-          <a href="/" class="material-icons mdc-top-app-bar__action-item" aria-label="Home Page" alt="home">home</a>
-          <div class="mdc-top-app-bar__action-item menu-button" aria-label="Projects button" alt="Projects button" role="button">
-            <i class="material-icons" aria-hidden="true">collections</i>
-            <div class="mdc-menu mdc-menu-surface" tabindex="-1">
-              <div class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical">
-                <a class="mdc-list-item" role="menuitem" href="projects.html">
-                  <i class="material-icons mdc-list-item__graphic" aria-hidden="true">web</i>
-                  <span class="mdc-list-item__text">Web Projects</span>
-                </a>
-                <a class="mdc-list-item" role="menuitem" href="projects.html">
-                  <i class="material-icons mdc-list-item__graphic" aria-hidden="true">library_music</i>
-                  <span class="mdc-list-item__text">Audio</span>
-                </a>
-                <a class="mdc-list-item" role="menuitem" href="projects.html">
-                  <i class="material-icons mdc-list-item__graphic" aria-hidden="true">video_library</i>
-                  <span class="mdc-list-item__text">Video</span>
-                </a>
-              </div>
+      <aside class="mdc-drawer mdc-drawer--modal">
+        <div class="mdc-drawer__header">
+          <img
+            class="portrait"
+            src="assets/portrait.jpg"
+            alt="Portrait of Hao"
+          />
+          <p class="mdc-drawer__title">Haoran Zhang</p>
+          <a class="mdc-drawer__subtitle" href="mailto:haoranzhang@icloud.com"
+            >haoranzhang@icloud.com</a
+          >
+        </div>
+        <div class="mdc-drawer__content">
+          <div class="mdc-list">
+            <a class="mdc-list-item" href="/" aria-selected="true">
+              <i
+                class="material-icons mdc-list-item__graphic"
+                aria-hidden="true"
+                >home</i
+              >
+              <span class="mdc-list-item__text">Home</span>
+            </a>
+
+            <a class="mdc-list-item" href="/projects.html">
+              <i
+                class="material-icons mdc-list-item__graphic"
+                aria-hidden="true"
+                >collections</i
+              >
+              <span class="mdc-list-item__text">Projects</span>
+            </a>
+
+            <a class="mdc-list-item" href="/contact.html">
+              <i
+                class="material-icons mdc-list-item__graphic"
+                aria-hidden="true"
+                >contact_mail</i
+              >
+              <span class="mdc-list-item__text">Contact</span>
+            </a>
+            <a class="mdc-list-item mdc-list-item--activated" href="about.html">
+              <i
+                class="material-icons mdc-list-item__graphic"
+                aria-hidden="true"
+                >info</i
+              >
+              <span class="mdc-list-item__text">About</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <div class="mdc-drawer-scrim"></div>
+
+      <main class="main-content" id="main-content">
+        <section class="flex">
+          <div class="section-1">
+            <div class="intro">
+              <p class="mdc-typography--headline4">This is about page</p>
+              <p class="mdc-typography--headline4">
+                You can find out more about me
+              </p>
             </div>
           </div>
-          <a href="/contact.html" class="material-icons mdc-top-app-bar__action-item" aria-label="Contact page" alt="Contact page">contact_mail</a>
-          <a href="/about.html" class="material-icons mdc-top-app-bar__action-item" aria-label="About page" alt="About page">info</a>
+          <div class="section-2">
+            <div class="visual">
+              <p class="mdc-typography--headline2">Beautiful Visual</p>
+            </div>
+          </div>
         </section>
-      </div>
-    </header>
+        <footer>
+          <span>
+            © 2019 Haoran Zhang
+          </span>
+        </footer>
+      </main>
+    </div>
+    <div id="particles-js"></div>
 
-    <aside class="mdc-drawer mdc-drawer--modal">
-      <div class="mdc-drawer__header">
-        <img class="portrait" src="assets/portrait.jpg" alt="Portrait of Hao">
-        <p class="mdc-drawer__title">Haoran Zhang</p>
-        <a class="mdc-drawer__subtitle" href="mailto:haoranzhang@icloud.com">haoranzhang@icloud.com</a>
-      </div>
-      <div class="mdc-drawer__content">
-        <div class="mdc-list">
-          <a class="mdc-list-item" href="/" aria-selected="true">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
-            <span class="mdc-list-item__text">Home</span>
-          </a>
-          <hr class="mdc-list-divider">
-
-          <a class="mdc-list-item" href="/projects.html">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">collections</i>
-            <span class="mdc-list-item__text">Projects</span>
-          </a>
-
-          <a class="mdc-list-item mdc-list-item__sub" href="/projects.html">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">web</i>
-            <span class="mdc-list-item__text">Web Projects</span>
-          </a>
-          <a class="mdc-list-item mdc-list-item__sub" href="/projects.html">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">library_music</i>
-            <span class="mdc-list-item__text">Audio</span>
-          </a>
-          <a class="mdc-list-item mdc-list-item__sub" href="/projects.html">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">video_library</i>
-            <span class="mdc-list-item__text">Video</span>
-          </a>
-
-          <hr class="mdc-list-divider">
-          <a class="mdc-list-item" href="/contact.html">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">contact_mail</i>
-            <span class="mdc-list-item__text">Contact</span>
-          </a>
-          <a class="mdc-list-item mdc-list-item--activated" href="about.html">
-            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">info</i>
-            <span class="mdc-list-item__text">About</span>
-          </a>
-        </div>
-      </div>
-    </aside>
-
-    <div class="mdc-drawer-scrim"></div>
-
-    <main class="main-content" id="main-content">
-      <section class="flex">
-        <div class="section-1">
-          <div class="intro">
-            <p class="mdc-typography--headline4">This is about page</p>
-            <p class="mdc-typography--headline4">You can find out more about me</p>
-          </div>
-        </div>
-        <div class="section-2">
-          <div class="visual">
-            <p class="mdc-typography--headline2">Beautiful Visual</p>
-          </div>
-        </div>
-      </section>
-      <footer>
-        <span>
-          © 2018 Haoran Zhang
-        </span>
-      </footer>
-    </main>
-  </div>
-  <div id="particles-js"></div>
-
-  <script src="main.bundle.js" async></script>
-  <script src="particles.bundle.js" async></script>
-</body>
-
+    <script src="main.bundle.js" async></script>
+    <script src="particles.bundle.js" async></script>
+  </body>
 </html>

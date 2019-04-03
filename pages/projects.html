@@ -42,47 +42,13 @@
               alt="home"
               >home</a
             >
-            <div
-              class="mdc-top-app-bar__action-item menu-button"
+            <a
+              href="/projects.html"
+              class="material-icons mdc-top-app-bar__action-item"
               aria-label="Projects button"
               alt="Projects button"
-              role="button"
+              >collections</a
             >
-              <i class="material-icons" aria-hidden="true">collections</i>
-              <div class="mdc-menu mdc-menu-surface" tabindex="-1">
-                <div
-                  class="mdc-list"
-                  role="menu"
-                  aria-hidden="true"
-                  aria-orientation="vertical"
-                >
-                  <a class="mdc-list-item" role="menuitem" href="projects.html">
-                    <i
-                      class="material-icons mdc-list-item__graphic"
-                      aria-hidden="true"
-                      >web</i
-                    >
-                    <span class="mdc-list-item__text">Web Projects</span>
-                  </a>
-                  <a class="mdc-list-item" role="menuitem" href="projects.html">
-                    <i
-                      class="material-icons mdc-list-item__graphic"
-                      aria-hidden="true"
-                      >library_music</i
-                    >
-                    <span class="mdc-list-item__text">Audio</span>
-                  </a>
-                  <a class="mdc-list-item" role="menuitem" href="projects.html">
-                    <i
-                      class="material-icons mdc-list-item__graphic"
-                      aria-hidden="true"
-                      >video_library</i
-                    >
-                    <span class="mdc-list-item__text">Video</span>
-                  </a>
-                </div>
-              </div>
-            </div>
             <a
               href="/contact.html"
               class="material-icons mdc-top-app-bar__action-item"
@@ -123,7 +89,6 @@
               >
               <span class="mdc-list-item__text">Home</span>
             </a>
-            <hr class="mdc-list-divider" />
 
             <a
               class="mdc-list-item mdc-list-item--activated"
@@ -137,32 +102,6 @@
               <span class="mdc-list-item__text">Projects</span>
             </a>
 
-            <a class="mdc-list-item mdc-list-item__sub" href="/projects.html">
-              <i
-                class="material-icons mdc-list-item__graphic"
-                aria-hidden="true"
-                >web</i
-              >
-              <span class="mdc-list-item__text">Web Projects</span>
-            </a>
-            <a class="mdc-list-item mdc-list-item__sub" href="/projects.html">
-              <i
-                class="material-icons mdc-list-item__graphic"
-                aria-hidden="true"
-                >library_music</i
-              >
-              <span class="mdc-list-item__text">Audio</span>
-            </a>
-            <a class="mdc-list-item mdc-list-item__sub" href="/projects.html">
-              <i
-                class="material-icons mdc-list-item__graphic"
-                aria-hidden="true"
-                >video_library</i
-              >
-              <span class="mdc-list-item__text">Video</span>
-            </a>
-
-            <hr class="mdc-list-divider" />
             <a class="mdc-list-item" href="/contact.html">
               <i
                 class="material-icons mdc-list-item__graphic"
@@ -189,28 +128,215 @@
         <section class="flex projects">
           <div class="section-1">
             <div class="btns">
-              <button class="mdc-button mdc-button--outlined">
+              <button class="mdc-button mdc-button--outlined" id="all">
+                <span class="mdc-button__label">All projects</span>
+              </button>
+              <button class="mdc-button mdc-button--outlined" id="apps">
                 <span class="mdc-button__label">Web Apps</span>
               </button>
-              <button class="mdc-button mdc-button--outlined">
-                <span class="mdc-button__label">Audio Project</span>
+              <button class="mdc-button mdc-button--outlined" id="sites">
+                <span class="mdc-button__label">Websites</span>
               </button>
-              <button class="mdc-button mdc-button--outlined">
-                <span class="mdc-button__label">Web project</span>
+              <button class="mdc-button mdc-button--outlined" id="other">
+                <span class="mdc-button__label">Other</span>
               </button>
             </div>
           </div>
           <div class="section-2">
-            <div class="visual">
-              <p class="mdc-typography--headline2">Beautiful Visual</p>
+            <div class="lists">
+              <div class="project project-app">
+                <div class="mdc-card">
+                  <div class="mdc-card__primary-action">
+                    <div
+                      class="mdc-card__media mdc-card__media--16-9 image-finder"
+                    ></div>
+                  </div>
+                  <div class="mdc-card__actions">
+                    <div class="title">
+                      <h3 class="mdc-typography mdc-typography--headline6">
+                        Image Finder
+                      </h3>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <a
+                        class="mdc-button mdc-card__action mdc-card__action--button"
+                        href="https://github.com/haoranzhang929/unsplash-image-finder"
+                        target="_blank"
+                      >
+                        <span class="mdc-button__label">Code</span>
+                      </a>
+                      <a
+                        class="mdc-button mdc-card__action mdc-card__action--button"
+                        href="http://hao-search.tk"
+                        target="_blank"
+                      >
+                        <span class="mdc-button__label">Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project project-app">
+                <div class="mdc-card">
+                  <div class="mdc-card__primary-action">
+                    <div
+                      class="mdc-card__media mdc-card__media--16-9 audio-freq"
+                    ></div>
+                  </div>
+                  <div class="mdc-card__actions">
+                    <div class="title">
+                      <h3 class="mdc-typography mdc-typography--headline6">
+                        Audio Visual Tool
+                      </h3>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <a
+                        class="mdc-button mdc-card__action mdc-card__action--button"
+                        href="https://github.com/haoranzhang929/audio-frequency-visual-generators"
+                        target="_blank"
+                      >
+                        <span class="mdc-button__label">Code</span>
+                      </a>
+                      <a
+                        class="mdc-button mdc-card__action mdc-card__action--button"
+                        href="http://ec2-52-213-180-139.eu-west-1.compute.amazonaws.com"
+                        target="_blank"
+                      >
+                        <span class="mdc-button__label">Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project project-site">
+                <div class="mdc-card">
+                  <div class="mdc-card__primary-action">
+                    <div
+                      class="mdc-card__media mdc-card__media--16-9 one-kicks"
+                    ></div>
+                  </div>
+                  <div class="mdc-card__actions">
+                    <div class="title">
+                      <h3 class="mdc-typography mdc-typography--headline6">
+                        ONE KICKS <br />
+                        (Online Store)
+                      </h3>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <button
+                        class="mdc-button mdc-card__action mdc-card__action--button hide"
+                        disabled
+                      >
+                        <span class="mdc-button__label">Code</span>
+                      </button>
+                      <a
+                        class="mdc-button mdc-card__action mdc-card__action--button"
+                        href="https://1-kicks.com"
+                        target="_blank"
+                      >
+                        <span class="mdc-button__label">URL</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project project-site">
+                <div class="mdc-card">
+                  <div class="mdc-card__primary-action">
+                    <div class="mdc-card__media mdc-card__media--16-9 cp"></div>
+                  </div>
+                  <div class="mdc-card__actions">
+                    <div class="title">
+                      <h3 class="mdc-typography mdc-typography--headline6">
+                        Changing Places Ireland
+                      </h3>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <button
+                        class="mdc-button mdc-card__action mdc-card__action--button hide"
+                        disabled
+                      >
+                        <span class="mdc-button__label">Code</span>
+                      </button>
+                      <a
+                        class="mdc-button mdc-card__action mdc-card__action--button"
+                        href="https://changingplaces.ie"
+                        target="_blank"
+                      >
+                        <span class="mdc-button__label">URL</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project project-other">
+                <div class="mdc-card">
+                  <div class="mdc-card__primary-action">
+                    <div class="mdc-card__media mdc-card__media--16-9 bc"></div>
+                  </div>
+                  <div class="mdc-card__actions">
+                    <div class="title">
+                      <h3 class="mdc-typography mdc-typography--headline6">
+                        My Bandcamp
+                      </h3>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <button
+                        class="mdc-button mdc-card__action mdc-card__action--button hide"
+                        disabled
+                      >
+                        <span class="mdc-button__label">Code</span>
+                      </button>
+                      <a
+                        class="mdc-button mdc-card__action mdc-card__action--button"
+                        href="https://ha0beatz.bandcamp.com"
+                        target="_blank"
+                      >
+                        <span class="mdc-button__label">URL</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project project-other">
+                <div class="mdc-card">
+                  <div class="mdc-card__primary-action">
+                    <div
+                      class="mdc-card__media mdc-card__media--16-9 youtube"
+                    ></div>
+                  </div>
+                  <div class="mdc-card__actions">
+                    <div class="title">
+                      <h3 class="mdc-typography mdc-typography--headline6">
+                        My Youtube Channel
+                      </h3>
+                    </div>
+                    <div class="mdc-card__action-buttons">
+                      <button
+                        class="mdc-button mdc-card__action mdc-card__action--button hide"
+                        disabled
+                      >
+                        <span class="mdc-button__label">Code</span>
+                      </button>
+                      <a
+                        class="mdc-button mdc-card__action mdc-card__action--button"
+                        href="https://www.youtube.com/channel/UCPIeJ9dP80qSbyOd2SGh4Jg/featured"
+                        target="_blank"
+                      >
+                        <span class="mdc-button__label">URL</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
-        <footer>
-          <span>
-            © 2018 Haoran Zhang
-          </span>
-        </footer>
       </main>
     </div>
     <div id="particles-js"></div>
