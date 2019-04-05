@@ -1,13 +1,23 @@
 import * as THREE from "three";
 import OBJLoader from "three-obj-loader";
+import { Perlin } from "./Perlin";
 
 OBJLoader(THREE);
 
-let triangle;
-
 const container = document.querySelector("#three");
+const container2 = document.querySelector("#three2");
+
+let isAboutPage;
 
 if (container) {
+  isAboutPage = false;
+  startThree(container, isAboutPage);
+} else if (container2) {
+  isAboutPage = true;
+  startThree(container2, isAboutPage);
+}
+
+function startThree(container, isAboutPage) {
   const canvasWidth = window.innerHeight / 2;
   const canvasHeight = window.innerHeight / 2;
 
@@ -18,6 +28,9 @@ if (container) {
   container.appendChild(cvs);
 
   const scene = new THREE.Scene();
+  if (isAboutPage) {
+    scene.fog = new THREE.Fog(scene.background, 1, 150);
+  }
   const camera = new THREE.PerspectiveCamera(
     65,
     canvasWidth / canvasHeight,
@@ -25,93 +38,26 @@ if (container) {
     1000
   );
   camera.position.set(0, 0, 6);
+  if (isAboutPage) {
+    camera.position.set(0, 0, 10);
+  }
 
   const ambLight = new THREE.AmbientLight(0xfffff, 1);
   scene.add(ambLight);
 
-  // const loader = new THREE.OBJLoader();
-
-  // let loadTriangle = objPath => {
-  //   let container = new THREE.Object3D();
-  //   loader.load(objPath, object => {
-  //     object.traverse(child => {
-  //       if (child instanceof THREE.Mesh) {
-  //         child.material = new THREE.MeshNormalMaterial();
-  //       }
-  //     });
-  //     container.add(object);
-  //   });
-  //   return container;
-  // };
-
-  // triangle = loadTriangle("assets/triangle.obj", "triangle");
-
-  // scene.add(triangle);
-
-  // triangle = loadTriangle("assets/triangle.obj", "triangle");
-
-  // scene.add(triangle);
-
-  // /* */
-  // let isDragging = false;
-  // let previousMousePosition = {
-  //   x: 0,
-  //   y: 0
-  // };
-  // cvs.addEventListener("mousedown", () => {
-  //   isDragging = true;
-  // });
-  // cvs.addEventListener("mousemove", e => {
-  //   let deltaMove = {
-  //     x: e.offsetX - previousMousePosition.x,
-  //     y: e.offsetY - previousMousePosition.y
-  //   };
-
-  //   if (isDragging) {
-  //     var deltaRotationQuaternion = new THREE.Quaternion().setFromEuler(
-  //       new THREE.Euler(
-  //         toRadians(deltaMove.y * 1),
-  //         toRadians(deltaMove.x * 1),
-  //         0,
-  //         "XYZ"
-  //       )
-  //     );
-
-  //     text.quaternion.multiplyQuaternions(
-  //       deltaRotationQuaternion,
-  //       text.quaternion
-  //     );
-  //   }
-  //   previousMousePosition = {
-  //     x: e.offsetX,
-  //     y: e.offsetY
-  //   };
-  // });
-
-  // function toRadians(angle) {
-  //   return angle * (Math.PI / 180);
-  // }
-
-  // function toDegrees(angle) {
-  //   return angle * (180 / Math.PI);
-  // }
-  // cvs.addEventListener("mouseup", e => {
-  //   isDragging = false;
-  // });
-
-  var textLoader = new THREE.FontLoader();
+  const textLoader = new THREE.FontLoader();
 
   let loadText = objPath => {
     let container = new THREE.Object3D();
     textLoader.load(objPath, font => {
-      var geometry = new THREE.TextGeometry("白告", {
+      let geometry = new THREE.TextGeometry("皓", {
         font: font,
-        size: 2,
+        size: 3.6,
         height: 0.5
       });
       geometry.computeBoundingBox();
-      var material = new THREE.MeshNormalMaterial();
-      var mesh = new THREE.Mesh(geometry, material);
+      let material = new THREE.MeshNormalMaterial();
+      let mesh = new THREE.Mesh(geometry, material);
       container.add(mesh);
     });
     return container;
@@ -119,83 +65,148 @@ if (container) {
 
   let text = loadText("assets/DFPKingGothicGB-Thin-2.json");
   text.position.x = -2.8;
-  text.position.y = -1;
+  text.position.y = -1.8;
 
   let pivot = new THREE.Object3D();
   pivot.add(text);
   scene.add(pivot);
 
-  cvs.addEventListener("mousedown", onDocumentMouseDown, false);
-  cvs.addEventListener("touchstart", onDocumentTouchStart, false);
-  cvs.addEventListener("touchmove", onDocumentTouchMove, false);
+  let windowHalfX = canvasWidth / 2;
 
-  var targetRotation = 0;
-  var targetRotationOnMouseDown = 0;
+  if (!isAboutPage) {
+    cvs.addEventListener("mousedown", onDocumentMouseDown, false);
+    cvs.addEventListener("touchstart", onDocumentTouchStart, false);
+    cvs.addEventListener("touchmove", onDocumentTouchMove, false);
 
-  let mouseX = 0;
-  let mouseXOnMouseDown = 0;
+    let targetRotation = 0;
+    let targetRotationOnMouseDown = 0;
 
-  var windowHalfX = canvasWidth / 2;
+    let mouseX = 0;
+    let mouseXOnMouseDown = 0;
 
-  function onDocumentMouseDown(event) {
-    cvs.addEventListener("mousemove", onDocumentMouseMove, false);
-    cvs.addEventListener("mouseup", onDocumentMouseUp, false);
-    cvs.addEventListener("mouseout", onDocumentMouseOut, false);
-    mouseXOnMouseDown = event.clientX - windowHalfX;
-    targetRotationOnMouseDown = targetRotation;
-  }
-
-  function onDocumentMouseMove(event) {
-    mouseX = event.clientX - windowHalfX;
-    targetRotation =
-      targetRotationOnMouseDown + (mouseX - mouseXOnMouseDown) * 0.02;
-  }
-
-  function onDocumentMouseUp() {
-    cvs.removeEventListener("mousemove", onDocumentMouseMove, false);
-    cvs.removeEventListener("mouseup", onDocumentMouseUp, false);
-    cvs.removeEventListener("mouseout", onDocumentMouseOut, false);
-  }
-
-  function onDocumentMouseOut() {
-    cvs.removeEventListener("mousemove", onDocumentMouseMove, false);
-    cvs.removeEventListener("mouseup", onDocumentMouseUp, false);
-    cvs.removeEventListener("mouseout", onDocumentMouseOut, false);
-  }
-
-  function onDocumentTouchStart(event) {
-    if (event.touches.length == 1) {
-      mouseXOnMouseDown = event.touches[0].pageX - windowHalfX;
+    function onDocumentMouseDown(event) {
+      cvs.addEventListener("mousemove", onDocumentMouseMove, false);
+      cvs.addEventListener("mouseup", onDocumentMouseUp, false);
+      cvs.addEventListener("mouseout", onDocumentMouseOut, false);
+      mouseXOnMouseDown = event.clientX - windowHalfX;
       targetRotationOnMouseDown = targetRotation;
     }
-  }
 
-  function onDocumentTouchMove(event) {
-    if (event.touches.length == 1) {
-      mouseX = event.touches[0].pageX - windowHalfX;
+    function onDocumentMouseMove(event) {
+      mouseX = event.clientX - windowHalfX;
       targetRotation =
-        targetRotationOnMouseDown + (mouseX - mouseXOnMouseDown) * 0.05;
+        targetRotationOnMouseDown + (mouseX - mouseXOnMouseDown) * 0.02;
     }
+
+    function onDocumentMouseUp() {
+      cvs.removeEventListener("mousemove", onDocumentMouseMove, false);
+      cvs.removeEventListener("mouseup", onDocumentMouseUp, false);
+      cvs.removeEventListener("mouseout", onDocumentMouseOut, false);
+    }
+
+    function onDocumentMouseOut() {
+      cvs.removeEventListener("mousemove", onDocumentMouseMove, false);
+      cvs.removeEventListener("mouseup", onDocumentMouseUp, false);
+      cvs.removeEventListener("mouseout", onDocumentMouseOut, false);
+    }
+
+    function onDocumentTouchStart(event) {
+      if (event.touches.length == 1) {
+        mouseXOnMouseDown = event.touches[0].pageX - windowHalfX;
+        targetRotationOnMouseDown = targetRotation;
+      }
+    }
+
+    function onDocumentTouchMove(event) {
+      if (event.touches.length == 1) {
+        mouseX = event.touches[0].pageX - windowHalfX;
+        targetRotation =
+          targetRotationOnMouseDown + (mouseX - mouseXOnMouseDown) * 0.05;
+      }
+    }
+
+    const render = () => {
+      requestAnimationFrame(render);
+
+      pivot.rotation.y -= 0.03;
+      pivot.rotation.y += (targetRotation - pivot.rotation.y) * 0.05;
+
+      renderer.render(scene, camera);
+    };
+
+    render();
+  } else {
+    const date = new Date();
+    const pn = new Perlin("rnd" + date.getTime());
+    
+    let ground, ground2;
+
+    const addGround = () => {
+      let groundMat = new THREE.MeshBasicMaterial({
+        color: 0x768fff
+      });
+      let plane = new THREE.PlaneGeometry(200, 5000, 100, 500);
+      ground = new THREE.Mesh(plane, groundMat);
+      for (let i = 0, l = plane.vertices.length; i < l; i++) {
+        let vertex = plane.vertices[i];
+        let value = pn.noise(vertex.x / 10, vertex.y / 20, 0);
+        vertex.z = value * 10;
+      }
+
+      plane.computeFaceNormals();
+      plane.computeVertexNormals();
+      ground.rotation.x = -Math.PI / 2;
+      ground.position.y = -15; //lower it
+      ground2 = ground.clone();
+      ground.position.z = -2400;
+      ground2.position.z = -7300;
+      ground.doubleSided = true;
+      scene.add(ground);
+      scene.add(ground2);
+    };
+
+    addGround();
+
+    let mousePos = { x: 0, y: 0 };
+    const handleMouseMove = event => {
+      let tx = -1 + (event.clientX / canvasWidth / 2) * 2;
+      let ty = 1 - (event.clientY / canvasHeight / 2) * 2;
+      mousePos = { x: tx, y: ty };
+      pivot.position.x = mousePos.x * 4;
+      pivot.position.y = mousePos.y * 2;
+      camera.lookAt(pivot.position);
+    };
+
+    const handleTouchmove = event => {
+      let tx = -1 + (event.touches[0].pageX / canvasWidth) * 2;
+      let ty = 1 - (event.touches[0].pageX / canvasHeight) * 2;
+      mousePos = { x: tx, y: ty };
+      pivot.position.x = mousePos.x * 4;
+      pivot.position.y = mousePos.y * 2;
+      camera.lookAt(pivot.position);
+    };
+
+    document.addEventListener("mousemove", handleMouseMove, false); //
+    document.addEventListener("touchmove", handleTouchmove, false);
+
+    const render = () => {
+      requestAnimationFrame(render);
+
+      ground.position.z += 0.8;
+      ground2.position.z += 0.8;
+
+      if (ground.position.z > 2500) {
+        ground.position.z = -7300;
+      }
+      if (ground2.position.z > 2500) {
+        ground2.position.z = -7300;
+      }
+
+      renderer.render(scene, camera);
+    };
+
+    render();
   }
-
-  // // Helper
-  // // AxesHelper: X aixs (red) 左右, Y aixs (green) 上下, Z axis (blue) 前后
-  // const axesHelper = new THREE.AxesHelper(10);
-  // scene.add(axesHelper);
-  // // GridHelper
-  // const gridHelper = new THREE.GridHelper(10, 10);
-  // scene.add(gridHelper);
-
-  const render = () => {
-    requestAnimationFrame(render);
-
-    pivot.rotation.y -= 0.04;
-    pivot.rotation.y += (targetRotation - pivot.rotation.y) * 0.05;
-
-    renderer.render(scene, camera);
-  };
-
-  render();
 
   // Window Resize Handler
   window.addEventListener(

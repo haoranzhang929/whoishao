@@ -97,7 +97,8 @@ body {
       justify-content: center;
       width: 50vw;
       .intro,
-      .visual {
+      .visual,
+      .resume {
         align-self: center;
       }
     }
@@ -134,6 +135,10 @@ body {
       }
       animation: fadein 2s;
     }
+  }
+  .reverse {
+    flex-direction: row-reverse;
+    animation: fadein 2s;
   }
 }
 
@@ -228,7 +233,6 @@ footer {
         align-items: center;
         flex-direction: row;
         width: 100vw;
-        height: 50vh;
       }
       .contact {
         h3 {
@@ -250,6 +254,30 @@ footer {
         }
         .email {
           font-size: 64px;
+        }
+      }
+      .resume {
+        text-align: start;
+      }
+    }
+    .reverse {
+      display: block;
+      padding-top: 64px;
+      .mdc-typography--headline4 {
+        margin: 10px 0;
+        text-align: center;
+      }
+      .mdc-typography--headline6 {
+        margin: 0 20px;
+      }
+      .mdc-typography--body1 {
+        margin: 10px 20px;
+      }
+      .section-2 {
+        margin-top: -50px;
+        canvas {
+          width: 100% !important;
+          height: 100% !important;
         }
       }
     }
