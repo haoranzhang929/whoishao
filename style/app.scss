@@ -101,6 +101,39 @@ body {
         align-self: center;
       }
     }
+    .contact {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100vw;
+      div {
+        text-align: center;
+        align-self: center;
+      }
+      .social-icons {
+        display: flex;
+        width: 50%;
+        a {
+          flex-grow: 1;
+        }
+        .qr:hover .wechat-qr {
+          width: 430px;
+          display: block;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          animation: fadein 1s;
+        }
+        .wechat-qr {
+          display: none;
+        }
+      }
+      .email {
+        font-size: 96px;
+        color: #0039cb;
+      }
+      animation: fadein 2s;
+    }
   }
 }
 
@@ -136,6 +169,7 @@ footer {
         height: 50%;
         width: 100%;
         .project {
+          animation: fadein 1.5s;
           justify-self: center;
           align-self: center;
           width: 80%;
@@ -196,6 +230,28 @@ footer {
         width: 100vw;
         height: 50vh;
       }
+      .contact {
+        h3 {
+          font-size: 2rem;
+        }
+        h4 {
+          font-size: 1.8rem;
+        }
+        .social-icons {
+          width: 100%;
+          a {
+            img {
+              width: 64px;
+            }
+          }
+          .qr:hover .wechat-qr {
+            width: 215px;
+          }
+        }
+        .email {
+          font-size: 64px;
+        }
+      }
     }
   }
 
@@ -240,6 +296,7 @@ footer {
 .shake:hover {
   animation: shake 1.5s infinite;
 }
+
 @keyframes shake {
   0% {
     transform: translate(1px, 1px) rotate(0deg);
@@ -273,5 +330,14 @@ footer {
   }
   100% {
     transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
