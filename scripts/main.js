@@ -56,22 +56,54 @@ function startThree(container, isAboutPage) {
         height: 0.5
       });
       geometry.computeBoundingBox();
-      let material = new THREE.MeshNormalMaterial();
-      let mesh = new THREE.Mesh(geometry, material);
+      const geo = new THREE.EdgesGeometry(geometry);
+
+      const lineMaterial = new THREE.LineBasicMaterial({
+        color: 0x2962ff
+      });
+      const material = new THREE.MeshNormalMaterial();
+
+      const mesh = new THREE.Mesh(geometry, material);
+      const line = new THREE.LineSegments(geo, lineMaterial);
+
+      line.material.depthTest = false;
+      line.material.opacity = 1;
+      line.material.transparent = true;
+      line.visible = false;
+
+      const cvsClick = document.querySelector("canvas");
+
+      cvsClick.addEventListener("click", toggleMeshLine);
+      cvsClick.addEventListener("touch", toggleMeshLine);
+
+      function toggleMeshLine() {
+        container.children[0].visible
+          ? ((container.children[0].visible = false),
+            (container.children[1].visible = true))
+          : ((container.children[0].visible = true),
+            (container.children[1].visible = false));
+      }
       container.add(mesh);
+      container.add(line);
     });
     return container;
   };
 
   let text = loadText("assets/DFPKingGothicGB-Thin-2.json");
-  text.position.x = -2.8;
-  text.position.y = -1.8;
+  text.position.x = -2.6;
+  text.position.y = -1.7;
 
   let pivot = new THREE.Object3D();
   pivot.add(text);
   scene.add(pivot);
 
   let windowHalfX = canvasWidth / 2;
+
+  // Helper
+  // const axesHelper = new THREE.AxesHelper(10);
+  // scene.add(axesHelper);
+  // const gridHelper = new THREE.GridHelper(10, 10);
+  // scene.add(gridHelper);
 
   if (!isAboutPage) {
     cvs.addEventListener("mousedown", onDocumentMouseDown, false);
@@ -138,7 +170,7 @@ function startThree(container, isAboutPage) {
   } else {
     const date = new Date();
     const pn = new Perlin("rnd" + date.getTime());
-    
+
     let ground, ground2;
 
     const addGround = () => {
