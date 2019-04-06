@@ -72,16 +72,16 @@ function startThree(container, isAboutPage) {
       line.visible = false;
 
       const cvsClick = document.querySelector("canvas");
+      const shakingEl = document.querySelector(".visual");
 
-      cvsClick.addEventListener("click", toggleMeshLine);
-      cvsClick.addEventListener("touch", toggleMeshLine);
-
-      function toggleMeshLine() {
-        const shakingEl = document.querySelector(".visual");
+      cvsClick.addEventListener("click", () => {
         if (shakingEl.classList.contains("keepShaking")) {
           shakingEl.classList.remove("keepShaking");
-          return;
         }
+        toggleMeshLine();
+      });
+
+      function toggleMeshLine() {
         container.children[0].visible
           ? ((container.children[0].visible = false),
             (container.children[1].visible = true))
