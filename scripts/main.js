@@ -77,6 +77,11 @@ function startThree(container, isAboutPage) {
       cvsClick.addEventListener("touch", toggleMeshLine);
 
       function toggleMeshLine() {
+        const shakingEl = document.querySelector(".visual");
+        if (shakingEl.classList.contains("keepShaking")) {
+          shakingEl.classList.remove("keepShaking");
+          return;
+        }
         container.children[0].visible
           ? ((container.children[0].visible = false),
             (container.children[1].visible = true))
