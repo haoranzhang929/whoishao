@@ -234,6 +234,9 @@ footer {
         flex-direction: row;
         width: 100vw;
       }
+      .section-1 {
+        height: 300px;
+      }
       .contact {
         h3 {
           font-size: 2rem;
@@ -326,7 +329,7 @@ footer {
 }
 
 .keepShaking {
-  animation: leftRightShake 2.5s infinite;
+  animation: leftRightShake 3s infinite;
 }
 
 @keyframes shake {
@@ -376,36 +379,36 @@ footer {
 
 @keyframes leftRightShake {
   0% {
-    transform: translate3d(-5px, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
   10% {
-    transform: translate3d(5px, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
   20% {
-    transform: translate3d(-5px, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
   30% {
-    transform: translate3d(5px, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
   40% {
-    transform: translate3d(-5px, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translate3d(5px, 0, 0);
+    transform: translate3d(8px, 0, 0);
   }
   60% {
-    transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-8px, 0, 0);
   }
   70% {
-    transform: translate3d(5px, 0, 0);
+    transform: translate3d(8px, 0, 0);
   }
   80% {
-    transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-8px, 0, 0);
   }
   90% {
-    transform: translate3d(5px, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translate3d(-5px, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
