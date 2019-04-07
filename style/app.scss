@@ -12,6 +12,7 @@ $mdc-theme-on-primary: #ffffff;
 @import "@material/menu-surface/mdc-menu-surface";
 @import "@material/menu/mdc-menu";
 @import "@material/button/mdc-button";
+@import "@material/chips/mdc-chips";
 
 body {
   display: flex;
@@ -25,7 +26,8 @@ h4,
 h5,
 h6,
 p,
-span {
+span,
+div {
   user-select: none;
 }
 
@@ -111,6 +113,12 @@ span {
       .visual,
       .resume {
         align-self: center;
+        .resume-download {
+          margin: 20px 0;
+          .mdc-button-1 {
+            padding-left: 0;
+          }
+        }
       }
     }
     .contact {
@@ -272,6 +280,13 @@ footer {
       }
       .resume {
         text-align: start;
+        #download {
+          display: flex;
+          margin: 10px 20px;
+          .mdc-button-1 {
+            margin-left: auto;
+          }
+        }
       }
     }
     .reverse {
@@ -290,8 +305,8 @@ footer {
       .section-2 {
         margin-top: -50px;
         canvas {
-          width: 100% !important;
-          height: 100% !important;
+          width: 100vw !important;
+          height: 100vw !important;
         }
       }
     }

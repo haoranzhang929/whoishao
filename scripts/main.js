@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import OBJLoader from "three-obj-loader";
+import { MDCRipple } from "@material/ripple";
 import { Perlin } from "./Perlin";
 
 OBJLoader(THREE);
@@ -13,6 +14,10 @@ if (container) {
   isAboutPage = false;
   startThree(container, isAboutPage);
 } else if (container2) {
+  let btns = document.querySelectorAll(".mdc-button");
+  for (let btn of btns) {
+    new MDCRipple(btn);
+  }
   isAboutPage = true;
   startThree(container2, isAboutPage);
 }
