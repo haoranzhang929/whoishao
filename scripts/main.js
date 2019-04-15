@@ -92,7 +92,7 @@ function startThree(container, isAboutPage) {
             (container.children[1].visible = true))
           : ((container.children[0].visible = true),
             (container.children[1].visible = false));
-        navigator.vibrate(500);
+        navigator.vibrate(100);
       }
       container.add(mesh);
       container.add(line);
