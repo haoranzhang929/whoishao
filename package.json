@@ -13,8 +13,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-deploy": "vue-cli-service build && gh-pages -d build",
-    "deploy": "gh-pages -d build"
+    "deploy": "vue-cli-service build && gh-pages -d build"
   },
   "dependencies": {
     "core-js": "^2.6.9",
