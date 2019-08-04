@@ -10,6 +10,7 @@ export default {
   props: ["isAbout"],
   data() {
     return {
+      publicPath: process.env.BASE_URL,
       canvasWidth: null,
       canvasHeight: null,
       camera: null,
@@ -18,8 +19,6 @@ export default {
       ambLight: null,
       hemisphereLight: null,
       text3D: null,
-      ground: null,
-      groundCopy: null,
       pivot: null,
       targetRotation: 0,
       targetRotationOnMouseDown: 0,
@@ -100,6 +99,10 @@ export default {
           false
         );
       }
+
+      if (this.text3D !== null) {
+        this.onObjLoaded();
+      }
     },
     animate: function() {
       requestAnimationFrame(this.animate);
@@ -114,43 +117,35 @@ export default {
     loadText: function() {
       const textLoader = new THREE.FontLoader();
       const objContainer = new THREE.Object3D();
-      textLoader.load(
-        "./hao.json",
-        font => {
-          const geometry = new THREE.TextBufferGeometry("皓", {
-            font: font,
-            size: 4,
-            height: 0.5
-          });
-          geometry.computeBoundingBox();
-          const geo = new THREE.EdgesGeometry(geometry);
-          const lineMaterial = new THREE.LineBasicMaterial({
-            color: 0xa27e7e
-          });
-          const material = new THREE.MeshPhongMaterial({
-            color: 0xa6a6a8
-          });
-          const mesh = new THREE.Mesh(geometry, material);
-          const line = new THREE.LineSegments(geo, lineMaterial);
-          if (this.isAbout) {
-            mesh.visible = false;
-            line.visible = true;
-          } else {
-            mesh.visible = true;
-            line.visible = false;
-          }
-          line.material.depthTest = false;
-          line.material.opacity = 1;
-          line.material.transparent = true;
-          objContainer.add(mesh);
-          objContainer.add(line);
-        },
-        xhr => {
-          if ((xhr.loaded / xhr.total) * 100 === 100) {
-            this.onObjLoaded();
-          }
+      textLoader.load(`${this.publicPath}hao.json`, font => {
+        const geometry = new THREE.TextBufferGeometry("皓", {
+          font: font,
+          size: 4,
+          height: 0.5
+        });
+        geometry.computeBoundingBox();
+        const geo = new THREE.EdgesGeometry(geometry);
+        const lineMaterial = new THREE.LineBasicMaterial({
+          color: 0xa27e7e
+        });
+        const material = new THREE.MeshPhongMaterial({
+          color: 0xa6a6a8
+        });
+        const mesh = new THREE.Mesh(geometry, material);
+        const line = new THREE.LineSegments(geo, lineMaterial);
+        if (this.isAbout) {
+          mesh.visible = false;
+          line.visible = true;
+        } else {
+          mesh.visible = true;
+          line.visible = false;
         }
-      );
+        line.material.depthTest = false;
+        line.material.opacity = 1;
+        line.material.transparent = true;
+        objContainer.add(mesh);
+        objContainer.add(line);
+      });
       return objContainer;
     },
     toggleText: function() {
