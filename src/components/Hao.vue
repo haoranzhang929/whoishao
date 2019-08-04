@@ -115,7 +115,7 @@ export default {
       const textLoader = new THREE.FontLoader();
       const objContainer = new THREE.Object3D();
       textLoader.load(
-        "/hao.json",
+        "./hao.json",
         font => {
           const geometry = new THREE.TextBufferGeometry("皓", {
             font: font,
