@@ -26,35 +26,35 @@ export default {
       projects: [
         {
           name: "Image Finder",
-          src: "/Image-search.png",
+          src: "/Image-search.webp",
           // demo: "http://hao-search.tk/",
           code: "https://github.com/haoranzhang929/unsplash-image-finder"
         },
         {
           name: "Audio Visual Tool",
-          src: "/audio-freq.png",
+          src: "/audio-freq.webp",
           // demo: "http://ec2-52-213-180-139.eu-west-1.compute.amazonaws.com/",
           code:
             "https://github.com/haoranzhang929/audio-frequency-visual-generators"
         },
         {
           name: "ONE KICKS",
-          src: "/shoes.jpg",
+          src: "/shoes.webp",
           url: "https://1-kicks.com/"
         },
         {
           name: "Changing Places Ireland",
-          src: "/cp.png",
+          src: "/cp.webp",
           url: "https://changingplaces.ie/"
         },
         {
           name: "Music Projects",
-          src: "/bc.jpg",
+          src: "/bc.webp",
           url: "https://ha0beatz.bandcamp.com/"
         },
         {
           name: "Video Projects",
-          src: "/youtube.jpg",
+          src: "/youtube.webp",
           url:
             "https://www.youtube.com/channel/UCPIeJ9dP80qSbyOd2SGh4Jg/featured"
         }

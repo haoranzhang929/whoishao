@@ -6,23 +6,23 @@
       </v-flex>
       <v-flex xs3 class="flex-align shake">
         <a href="https://github.com/haoranzhang929" target="_black">
-          <img src="/icons8-github.svg" alt="linkedin icon">
+          <img class="icon-img" src="/icons8-github.webp" alt="github icon">
         </a>
       </v-flex>
       <v-flex xs3 class="flex-align shake">
         <a href="https://www.linkedin.com/in/haoran-zhang-ie" target="_black">
-          <img src="/icons8-linkedin.svg" alt="linkedin icon">
+          <img class="icon-img" src="/icons8-linkedin.webp" alt="linkedin icon">
         </a>
       </v-flex>
       <v-flex xs3 class="flex-align shake">
         <a href="https://www.instagram.com/mikezhanghao" target="_black">
-          <img src="/icons8-instagram.svg" alt="linkedin icon">
+          <img class="icon-img" src="/icons8-instagram.webp" alt="instagram icon">
         </a>
       </v-flex>
       <v-flex xs3 class="flex-align">
         <a href="#" class="qr">
-          <img src="/icons8-weixin.svg" alt="linkedin icon">
-          <img class="wechat-qr" src="/qrcode.png" alt="wechat qrcode">
+          <img class="icon-img" src="/icons8-weixin.webp" alt="linkedin icon">
+          <img class="wechat-qr" src="/qrcode.webp" alt="wechat qrcode">
         </a>
       </v-flex>
       <v-flex xs12 class="display-1 flex-align">
@@ -48,7 +48,7 @@ export default {
 
 <style scoped>
 .qr:hover .wechat-qr {
-  width: 430px;
+  width: 300px;
   display: block;
   position: absolute;
   left: 50%;
@@ -58,6 +58,16 @@ export default {
 .wechat-qr {
   display: none;
   z-index: 10;
+}
+
+.icon-img {
+  width: 100px;
+}
+
+@media (max-width: 960px) {
+  .icon-img {
+    width: 64px;
+  }
 }
 
 .flex-align {

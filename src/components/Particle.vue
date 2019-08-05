@@ -30,7 +30,7 @@ export default {
               nb_sides: 6
             },
             image: {
-              src: "img/github.svg",
+              src: "img/github.webp",
               width: 100,
               height: 100
             }

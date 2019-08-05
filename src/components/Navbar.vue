@@ -4,7 +4,7 @@
       <v-toolbar-side-icon class="secondary--text" @click="drawer = !drawer"></v-toolbar-side-icon>
 
       <v-toolbar-title class="text-uppercase secondary--text">
-        <v-img src="/logo.svg" max-width="50px" min-width="50px"></v-img>
+        <v-img src="/logo.webp" max-width="50px" min-width="50px"></v-img>
       </v-toolbar-title>
 
       <v-toolbar-title class="text-uppercase secondary--text">
@@ -46,7 +46,7 @@
       <v-layout column align-center>
         <v-flex class="mt-3">
           <v-avatar size="80">
-            <img src="/portrait.jpg">
+            <img src="/portrait.webp">
           </v-avatar>
         </v-flex>
         <v-flex>
