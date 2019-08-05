@@ -4,8 +4,8 @@
       <v-flex xs12 md6 align-self-center class="text-xs-center home-item home-item--1">
         <P
           class="display-3 secondary--text text--lighten-2 font-weight-thin home-sub-item home-sub-item--1"
-        >Design</P>
-        <P class="display-3 secondary--text font-weight-light home-sub-item home-sub-item--2">Code</P>
+        >Code</P>
+        <P class="display-3 secondary--text font-weight-light home-sub-item home-sub-item--2">Design</P>
         <P
           class="display-3 secondary--text text--darken-1 font-weight-regular home-sub-item home-sub-item--3"
         >Music</P>
