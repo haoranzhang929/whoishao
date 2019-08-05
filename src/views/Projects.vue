@@ -80,7 +80,7 @@ export default {
   width: 300px;
   height: 50px;
   text-align: center;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   color: #fff;
   border-radius: 3px;
 }
