@@ -4,9 +4,16 @@
       <v-flex xs12 md6 align-self-center class="display-4 text-xs-center about-item">
         <Hao v-on:onObjLoaded="onObjLoaded" v-bind:isAbout="true"/>
       </v-flex>
-      <v-flex xs12 md6 align-self-center class="text-xs-center about-item about-item--1">
-        <p>Hey Welcome!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facilis eos blanditiis provident pariatur architecto dignissimos reiciendis voluptatem enim itaque sit optio, ipsum aspernatur rem earum quis aliquid iusto soluta omnis sunt, voluptas quos officiis, eius nulla. Officiis aspernatur porro voluptas enim, amet odio sint doloremque facere dignissimos. Explicabo necessitatibus possimus nostrum aspernatur est quasi quod fugiat sapiente asperiores laudantium accusantium, dolorum, officiis odio laborum veniam nobis odit placeat adipisci expedita in debitis! At sit vel tempore asperiores eius. Incidunt officiis animi nulla repellendus velit laudantium magni quaerat atque dolores impedit in exercitationem, fugit placeat, quasi accusantium, quia amet praesentium?</p>
+      <v-flex xs12 md6 align-self-center class="about-item about-item--1">
+        <h5 class="headline font-weight-light">Hey I am Hao, Nice to have you here!</h5>
+        <h5 class="headline font-weight-light">I'm a Software Engineer based in Dublin, Ireland</h5>
+        <h5
+          class="headline font-weight-light"
+        >Code‍💻, Design✍ and Music (I produce/DJ too!)🎵 are my passions</h5>
+        <h5 class="headline font-weight-light">I can speak Chinese/English/Javascript 😉</h5>
+        <h5
+          class="headline font-weight-light"
+        >Always interested in learning new technologies and trying out new things!</h5>
       </v-flex>
     </v-layout>
     <v-layout row wrap align-center v-if="!isLoaded">
@@ -47,48 +54,21 @@ export default {
   }
 
   .about-item--1 {
-    padding-right: 0 !important;
+    padding: 0 20px !important;
+  }
+
+  .about-item--1 .headline {
+    font-size: 18px !important;
   }
 }
 
 .about-item--1 {
   display: flex;
   flex-direction: column;
-  padding-right: 150px;
+  padding: 0 150px 0 80px;
 }
 
-.about-sub-item {
-  padding: 5px;
-  border-radius: 10px;
-}
-
-.about-sub-item--1 {
-  align-self: flex-start;
-}
-
-.about-sub-item--1:hover {
-  background: #6b5152;
-  color: #fff !important;
-  transition: background-color 0.2s ease;
-}
-
-.about-sub-item--2 {
-  align-self: center;
-}
-
-.about-sub-item--2:hover {
-  background: #cac3bb;
-  color: #fff !important;
-  transition: background-color 0.2s ease;
-}
-
-.about-sub-item--3 {
-  align-self: flex-end;
-}
-
-.about-sub-item--3:hover {
-  background: #a6a6a8;
-  color: #fff !important;
-  transition: background-color 0.2s ease;
+.about-item--1 .headline {
+  margin: 10px 0;
 }
 </style>
