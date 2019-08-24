@@ -4,6 +4,7 @@
 
 <script>
 import * as THREE from "three";
+import { WEBGL } from "three/examples/jsm/WebGL.js";
 
 export default {
   name: "Hao",
@@ -29,7 +30,7 @@ export default {
   },
   methods: {
     init: function() {
-      const container = document.getElementById("three-container");
+      const container = document.querySelector("#three-container");
       this.canvasWidth = window.innerHeight / 2;
       this.canvasHeight = window.innerHeight / 2;
 
@@ -74,7 +75,15 @@ export default {
         this.toggleText();
       });
 
-      this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      const canvas = document.createElement("canvas");
+      const context = canvas.getContext("webgl2");
+
+      this.renderer = new THREE.WebGLRenderer({
+        canvas,
+        context,
+        antialias: true,
+        alpha: true
+      });
       this.renderer.setPixelRatio(window.devicePixelRatio);
       this.renderer.setSize(this.canvasWidth, this.canvasHeight);
       container.appendChild(this.renderer.domElement);
@@ -250,6 +259,9 @@ export default {
     }
   },
   mounted() {
+    if (WEBGL.isWebGL2Available() === false) {
+      document.body.appendChild(WEBGL.getWebGL2ErrorMessage());
+    }
     this.init();
     this.animate();
   }
